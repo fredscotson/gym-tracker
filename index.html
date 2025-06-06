@@ -1,79 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Gym Tracker</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    h1 {
-      text-align: center;
-    }
-    label, input {
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-    button {
-      margin-top: 1rem;
-    }
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid #ccc;
-    }
-  </style>
+  
 </head>
 <body>
-
-  <h1>Gym Weight Tracker</h1>
-
-  <form id="tracker-form">
-    <label for="exercise">Exercise:</label>
-    <input type="text" id="exercise" required>
-
-    <label for="weight">Weight (kg):</label>
-    <input type="number" id="weight" required>
-
-    <button type="submit">Add Entry</button>
-  </form>
-
-  <h2>Workout Log</h2>
-  <ul id="log"></ul>
-
-  <script>
-    const form = document.getElementById('tracker-form');
-    const log = document.getElementById('log');
-
-    const entries = JSON.parse(localStorage.getItem('gym-log')) || [];
-
-    function renderLog() {
-      log.innerHTML = '';
-      entries.forEach(entry => {
-        const li = document.createElement('li');
-        li.textContent = `${entry.exercise} — ${entry.weight} kg`;
-        log.appendChild(li);
-      });
-    }
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const exercise = document.getElementById('exercise').value;
-      const weight = document.getElementById('weight').value;
-      entries.push({ exercise, weight });
-      localStorage.setItem('gym-log', JSON.stringify(entries));
-      form.reset();
-      renderLog();
-    });
-
-    renderLog();
-  </script>
-
+  <header>
+  <h1>Barney Scotson - A Memorial Site for the Goodest Boy</h1>
+  <a href="https://commons.wikimedia.org/wiki/File:A_Spanador.jpg"><img src="barney_image.jpg" alt="Our Dog Barney"/></a>
+  </header>
+  <article>
+    <p>In December of 2022, our beautiful Spanador Barney, sadly passed away. He lived for 13 years.
+      This site has been designed to honour the legacy of joy, laughter, and snoot boops he left behind.
+    </p>
+  </article>
 </body>
 </html>
